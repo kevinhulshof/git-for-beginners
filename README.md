@@ -1,6 +1,13 @@
 # Git for beginners
 
-A documentation of Git for myself.
+A documentation/cheatsheet of Git for myself.
+
+## Git workflow
+
+1. Modify files
+2. git add <file>
+3. git commit -m "message"
+4. git push
 
 ## Basic commands
 
@@ -23,7 +30,7 @@ A documentation of Git for myself.
   Remove a file from staging
 
 - `git restore file.txt`  
-  Restor a file to the last commit
+  Restore a file to the last commit
 
 - `git commit -m "message"`  
   Commit with a message
@@ -34,19 +41,25 @@ A documentation of Git for myself.
 - `git log`  `git log --oneline --graph --all`  
   Show commit history
 
-- `git diff (--staged)`  
+- `git diff`  
   Shows changes not yet committed
+
+- `git diff --staged`  
+  Shows staged changes that will be included in the next commit
+
+- `git show`
+  Show details of the latest commit
 
 ## Branch commands
 
 - `git branch`  
-  Shows current branch and active branches
+  Shows all local branches and highlights the current branch
 
 - `git switch <branch/commit> (-c branch_name)`  
   Switches active branch or creates with -c
 
 - `git merge <branch>`  
-  Branch to merge to the currently active branch
+  Merges the specified branch into the currently active branch
 
 - `git branch -d <branch>`  
   Delete branch
@@ -56,8 +69,9 @@ A documentation of Git for myself.
 - `git remote add <name> <url>`  
   Connect local repository to github
 
-- `git push (-u <name> <branch>)`  
-  Pushes the branch to github (-u and arguments for first time only)
+- `git push -u <remote> <branch>`
+  Pushes a branch and sets the upstream tracking branch.
+  After the first push, `git push` is usually enough.
 
 - `git remote -v`  
   Check where repository is connected
@@ -65,5 +79,11 @@ A documentation of Git for myself.
 - `git clone <url>`  
   Clones the repository to the current working directory
 
+- `git clone <url> my-project`  
+  Clones into a folder named my-project
+
 - `git pull`  
   Pulls the latest changes
+
+- `git fetch`
+  Download changes from remote without merging them
