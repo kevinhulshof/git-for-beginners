@@ -36,8 +36,11 @@ A documentation/cheatsheet of Git for myself.
 - `git restore --staged file.txt`  
   Removes a file from the staging area
 
-- `git restore file.txt`  
-  Restores a file to its state in the last commit
+- `git diff`  
+  Shows changes not yet committed or staged
+
+- `git diff --staged`  
+  Shows staged changes that will be included in the next commit
 
 - `git commit -m "message"`  
   Commit with a message
@@ -45,17 +48,14 @@ A documentation/cheatsheet of Git for myself.
 - `git status`  
   Show repository status and changed files
 
+- `git restore file.txt`  
+  Restores a file to its state in the last commit
+
 - `git log`  
   Show commit history
 
 - `git log --oneline --graph --all`  
   Show compact commit history with branch graph
-
-- `git diff`  
-  Shows changes not yet committed
-
-- `git diff --staged`  
-  Shows staged changes that will be included in the next commit
 
 - `git show`  
   Show details of the latest commit
@@ -81,7 +81,7 @@ A documentation/cheatsheet of Git for myself.
   Delete branch
 
 - `git branch -m <name>`  
-  Rename branch
+  Rename currently active branch
 
 - `git stash`  
   Temporarily saves unfinished work without committing it.  
@@ -118,3 +118,7 @@ A documentation/cheatsheet of Git for myself.
 
 - `git fetch`  
   Downloads changes from the remote repository without merging them
+
+- `git merge`  
+  Merges the fetched changes.  
+  May require resolving merge conflicts if the same files were changed.
