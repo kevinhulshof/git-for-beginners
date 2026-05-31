@@ -4,33 +4,40 @@ A documentation/cheatsheet of Git for myself.
 
 ## Git workflow
 
+0. git pull (optional, before starting work)
 1. Modify files
 2. git add <file>
 3. git commit -m "message"
 4. git push
 
+## Ignore files
+
+- `.gitignore`
+  Lists files and folders Git should ignore.
+  Useful for node_modules, logs, build files, etc.
+
 ## Basic commands
 
 - `git --version`  
-  Shows the currently installed Git version.
+  Shows the currently installed Git version
 
 - `git init`  
-  Initializes Git in the current directory.
+  Initializes Git in the current directory
 
 - `git config --global user.name "Name"`  
-  Sets the name that will appear on commits.
+  Sets the name that will appear on commits
 
 - `git config --global user.email "Email"`  
-  Sets the mail that will appear on commits.
+  Sets the email address that will appear on commits
 
 - `git add <file/dir> (. for everything)`  
-  Add files/directories to staging for the next commit
+  Adds files/directories to the staging area for the next commit
 
 - `git restore --staged file.txt`  
-  Remove a file from staging
+  Removes a file from the staging area
 
 - `git restore file.txt`  
-  Restore a file to the last commit
+  Restores a file to its state in the last commit
 
 - `git commit -m "message"`  
   Commit with a message
@@ -38,8 +45,11 @@ A documentation/cheatsheet of Git for myself.
 - `git status`  
   Show repository status and changed files
 
-- `git log`  `git log --oneline --graph --all`  
+- `git log`  
   Show commit history
+
+- `git log --oneline --graph --all`  
+  Show compact commit history with branch graph
 
 - `git diff`  
   Shows changes not yet committed
@@ -47,16 +57,22 @@ A documentation/cheatsheet of Git for myself.
 - `git diff --staged`  
   Shows staged changes that will be included in the next commit
 
-- `git show`
+- `git show`  
   Show details of the latest commit
+
+- `git reset --soft HEAD~1`  
+  Undo the last commit but keep the changes. Useful when you commit too early
 
 ## Branch commands
 
 - `git branch`  
   Shows all local branches and highlights the current branch
 
-- `git switch <branch/commit> (-c branch_name)`  
-  Switches active branch or creates with -c
+- `git switch <branch>`  
+  Switch to an existing branch
+
+- `git switch -c <branch>`  
+  Create and switch to a new branch
 
 - `git merge <branch>`  
   Merges the specified branch into the currently active branch
@@ -64,17 +80,31 @@ A documentation/cheatsheet of Git for myself.
 - `git branch -d <branch>`  
   Delete branch
 
+- `git branch -m <name>`  
+  Rename branch
+
+- `git stash`  
+  Temporarily saves unfinished work without committing it.  
+  Useful when switching branches before your work is finished
+
+- `git stash pop`  
+  Restores the stashed changes and removes them from the stash
+
 ## GitHub commands
 
-- `git remote add <name> <url>`  
-  Connect local repository to github
+- `git remote add <remote> <url>`  
+  Connects the local repository to GitHub  
+(The remote name can be anything, but "origin" is the standard convention)
 
 - `git push -u <remote> <branch>`
-  Pushes a branch and sets the upstream tracking branch.
+  Pushes a branch and sets the upstream tracking branch.  
   After the first push, `git push` is usually enough.
 
+- `git remote`  
+  Shows the names of the remote repositories
+
 - `git remote -v`  
-  Check where repository is connected
+  Shows the configured remote repositories
 
 - `git clone <url>`  
   Clones the repository to the current working directory
@@ -83,7 +113,8 @@ A documentation/cheatsheet of Git for myself.
   Clones into a folder named my-project
 
 - `git pull`  
-  Pulls the latest changes
+  Fetches changes from the remote repository and merges them into the current branch.  
+  May require resolving merge conflicts if the same files were changed.
 
-- `git fetch`
-  Download changes from remote without merging them
+- `git fetch`  
+  Downloads changes from the remote repository without merging them
