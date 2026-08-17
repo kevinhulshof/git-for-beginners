@@ -4,11 +4,11 @@ A documentation/cheatsheet of Git for myself.
 
 ## Git workflow
 
-0. git pull (optional, before starting work)
+0. `git pull` (optional, before starting work)
 1. Modify files
-2. git add <file>
-3. git commit -m "message"
-4. git push
+2. `git add <file>`
+3. `git commit -m "message"`
+4. `git push`
 
 ## Ignore files
 
